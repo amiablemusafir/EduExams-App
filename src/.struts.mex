@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="default" location="165,10" size="770,4025">
+    <action name="Globalhome" location="555,106" size="150,83">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="home.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="welcome.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="RegistrationPage" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="registration.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="AboutUs" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="registration.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="ContactUs" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="registration.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="authentication" location="555,281" size="150,83">
+      <result name="success" />
+      <result name="changepassword">
+        <resourceEdge source="changepassword" routing="0" target="studentChangePassword.jsp" />
+      </result>
+      <result name="error" />
+    </action>
+    <action name="changePasswordNSecretQusForm" location="310,292" size="150,62">
+      <result name="success" />
+      <result name="error" />
+    </action>
+    <action name="saveOrUpdateStudentChangePasswordDtl" location="310,187" size="150,62">
+      <result name="success" />
+      <result name="error" />
+    </action>
+    <action name="homepage" location="65,187" size="150,62">
+      <result name="success" />
+      <result name="error" />
+    </action>
+    <action name="logout" location="65,477" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="newsandevents" location="65,572" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="news" location="555,561" size="150,83">
+      <result name="success" />
+      <result name="already_exist" />
+      <result name="error" />
+    </action>
+    <action name="editNewsAndEventsDetail" location="555,712" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="deleteNewsAndEventsDetail" location="555,817" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="notice" location="555,922" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="noticeDetails" location="555,1041" size="150,104">
+      <result name="success" />
+      <result name="already_exist" />
+      <result name="error" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="editNoticeDetail" location="555,1202" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="deleteNoticeDetail" location="555,1307" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="managepassword" location="555,1412" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="showStudentPage" location="555,1517" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="showStudentDetailsReport" location="555,1622" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="searchStudentsDetailsByCretaria" location="555,1727" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="saveOrUpdateStudentDetailsDto" location="555,1835" size="150,125">
+      <result name="success" />
+      <result name="update_success" />
+      <result name="already_exist" />
+      <result name="error" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="editstudentDetail" location="555,2007" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="deletestudentDetail" location="555,2112" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="showActiveInactiveStudentDetails" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="searchStudentsDetailsByCretariaDetails" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="showNewStudentRequestDetails" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="changeStudentStatus" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="approveStudentStatus" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="rejectStudentStatus" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="showEmployeePage" location="555,2217" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="saveOrUpdateEmployeeDetailsDto" location="555,2325" size="150,125">
+      <result name="success" />
+      <result name="update_success" />
+      <result name="already_exist" />
+      <result name="error" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="showEmployeeDetailsReport" location="555,2497" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="searchEmployeeDetailsByCretaria" location="555,2602" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="editemployeeDetail" location="555,2707" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="deleteemployeeDetail" location="555,2812" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="showCreateExamPage" location="555,2917" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="showCourseMasterDetails" location="555,3046" size="150,83">
+      <result name="success" />
+      <result name="error" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="saveCourrseDetailsDto" location="555,3221" size="150,83">
+      <result name="success" />
+      <result name="error" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="editCourseDetail" location="555,3396" size="150,83">
+      <result name="success" />
+      <result name="error" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="deleteCourseDetail" location="555,3571" size="150,83">
+      <result name="success" />
+      <result name="error" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="showSectionMasterDetails" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="error" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="saveSectionDetailsDto" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="error" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="editSectionDetail" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="error" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="deleteSectionDetail" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="error" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="saveExamSectionDetail" location="555,3746" size="150,83">
+      <result name="success" />
+      <result name="error" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="showCreateQuestionPage" location="310,3932" size="150,62">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="saveQuestionDetailsDto" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="showQuestionDetailsPage" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="searchQuestionByCretaria" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="deleteQuestionDetails" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="editQuestionDetails" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="saveEditQuestionDetailsDto" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="welcome.jsp" />
+      </result>
+    </action>
+    <action name="getExamDetails" location="310,3838" size="150,40" />
+    <action name="getExamSectionDetails" location="65,3838" size="150,40" />
+    <action name="showOnlineExam" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="showOnlineExamTest" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="examPaper.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="index.jsp" path="WEB-INF/design/index.jsp" location="995,100" size="150,55" />
+  <webResource name="welcome.jsp" path="/welcome.jsp" location="10,3740" size="150,55" />
+  <webResource name="studentChangePassword.jsp" path="/WEB-INF/jsppages/Administration/Transaction/studentChangePassword.jsp" location="1000,275" size="150,55" />
+  <webResource name="index.jsp" path="/index.jsp" location="990,450" size="150,55" />
+  <webResource name="examPaper.jsp" path="/WEB-INF/design/examPaper.jsp" location="0,0" size="0,0" />
+  <webResource name="home.jsp" path="/home.jsp" location="0,0" size="0,0" />
+  <webResource name="registration.jsp" path="/registration.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

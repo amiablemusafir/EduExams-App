@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="baseLayoutHome" template="/layout.jsp">
+		<put-attribute name="header" value="/header.jsp" />
+		<put-attribute name="banner" value="" />
+		<put-attribute name="menu" value="/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/footer.jsp" />
+	</definition>
+	<definition name="baseLayoutbranding" template="/layoutmodule.jsp">
+		<put-attribute name="header" value="/header.jsp" />
+		<put-attribute name="banner" value="/banner.jsp" />
+		<put-attribute name="menu" value="/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/footer.jsp" />
+	</definition>
+
+	<definition name="/adminlogin.info.tiles" extends="baseLayoutHome">
+		<put-attribute name="body" value="/welcomePage.jsp" />
+	</definition>
+	
+	<definition name="/showallexamination.info.tiles" extends="baseLayoutHome">
+		<put-attribute name="body" value="/WEB-INF/jsppage/showAllExaminationDetails.jsp" />
+	</definition>
+	
+	<definition name="/shownotification.info.tiles" extends="baseLayoutHome">
+		<put-attribute name="body" value="/WEB-INF/jsppage/showNotificationDetails.jsp" />
+	</definition>
+
+	<definition name="/rolemaster.info.tiles" extends="baseLayoutbranding">
+		<put-attribute name="body" value="/WEB-INF/jsppages/roleMaster.jsp" />
+	</definition>
+	
+	<definition name="/permissionmaster.info.tiles" extends="baseLayoutbranding">
+		<put-attribute name="body"
+			value="/WEB-INF/jsppages/permissionMaster.jsp" />
+	</definition>
+	<definition name="/rolepermissionmaster.info.tiles" extends="baseLayoutbranding">
+		<put-attribute name="body"
+			value="/WEB-INF/jsppages/rolePermissionMaster.jsp" />
+	</definition>
+	<definition name="/rolepermissionmaster.info.tiles" extends="baseLayoutbranding">
+		<put-attribute name="body"
+			value="/WEB-INF/jsppages/rolePermissionMaster.jsp" />
+	</definition>
+	
+	<definition name="/adminpannel.info.tiles" extends="baseLayoutbranding">
+		<put-attribute name="body" value="/WEB-INF/jsppage/adminwelcome.jsp" />
+	</definition>
+	
+	<definition name="/studentrecord.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/studentrecord.jsp"/>
+	</definition>
+	
+	<definition name="/updatestudentrecord.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/updatestudentrecord.jsp"/>
+	</definition>
+	
+	<definition name="/searchstudentrecord.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/searchStudentDetails.jsp"/>
+	</definition>
+	
+	<definition name="/searchstudent.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/searchStudentActiveInactive.jsp"/>
+	</definition>
+	
+	<definition name="/newstudentrequest.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/newStudentRecord.jsp"/>
+	</definition>
+	
+	
+	
+	
+	
+	<definition name="/viewstudentrecord.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/viewstudentrecord.jsp"/>
+	</definition>
+	
+	<definition name="/changepassword.info.tiles" extends="baseLayoutbranding">
+	 	<put-attribute name="body" value="/WEB-INF/jsppages/changePasswordOrSecretQuestion.jsp" />
+	</definition>
+	
+	<definition name="/notice.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/notice.jsp"/>
+	</definition>
+	
+	<definition name="/noticeboard.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/noticeBoard.jsp"/>
+	</definition>
+	
+	<definition name="/news.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/news.jsp"/>
+	</definition>
+	
+	<definition name="/employeerecord.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/employeerecord.jsp"/>
+	</definition>
+	
+	<definition name="/searchemployeerecord.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/searchEmployeeDetails.jsp"/>
+	</definition>
+	
+	
+	
+	<!-- Examination Details -->
+	<definition name="/showocreateexampage.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/createExamDetails.jsp"/>
+	</definition>
+	
+	<!-- Question Details -->
+	<definition name="/showcreatequestionpage.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/createQuestionDetails.jsp"/>
+	</definition>
+	<definition name="/showuploadquestionpage.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/uploadQuestionDetails.jsp"/>
+	</definition>
+	<definition name="/editdeletequestionpage.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/editDeleteQuestionDetails.jsp"/>
+	</definition>
+	<definition name="/editquestionpage.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/editQuestionDetails.jsp"/>
+	</definition>
+	<definition name="/manageexamdetailspage.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/manageExamDetails.jsp"/>
+	</definition>
+	<definition name="/showmanageexamdetailspage.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/showManageExamDetails.jsp"/>
+	</definition>
+	<definition name="/checkexamdetailspage.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/checkExamDetails.jsp"/>
+	</definition>
+	<definition name="/showallexamdetailspage.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/showAllExamDetails.jsp"/>
+	</definition>
+	<definition name="/showexamrequestdetailspage.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/showStudentRequestDetails.jsp"/>
+	</definition>
+	<definition name="/showmanageexamrequestdetailspage.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/showManageExamRequestDetailsPage.jsp"/>
+	</definition>
+	<definition name="/showmanageexamrequestdetails.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/showManageExamDetailsAdmin.jsp"/>
+	</definition>
+	
+	
+	
+	<definition name="/showstudentresultdetails.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/studentResultList.jsp"/>
+	</definition>
+	<definition name="/showstudentresultdetailspage.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/studentResultDetailsPage.jsp"/>
+	</definition>
+	
+	
+	
+	
+	<!-- Master -->
+	<definition name="/coursemaster.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/courseMaster.jsp"/>
+	</definition>
+	
+	<definition name="/institutemaster.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/instituteMaster.jsp"/>
+	</definition>
+	
+	<definition name="/batchmaster.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/batchMaster.jsp"/>
+	</definition>
+	
+	<definition name="/contentmaster.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/contentMaster.jsp"/>
+	</definition>
+	
+	<definition name="/sectionmaster.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/sectionMaster.jsp"/>
+	</definition>
+	
+	<definition name="/categorymaster.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/categoryMaster.jsp"/>
+	</definition>
+	
+	<definition name="/subcategorymaster.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/subCategoryMaster.jsp"/>
+	</definition>
+	
+	<definition name="/showonlineexampage.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/design/exam.jsp"/>
+	</definition>
+	
+	
+	<definition name="/createblogdetails.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/showCreateBlogDetails.jsp"/>
+	</definition>
+	
+	<definition name="/createspotlightdetails.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/showCreateSpotLightDetails.jsp"/>
+	</definition>
+	
+	<definition name="/blogdetails.info.tiles" extends="baseLayoutbranding">
+	  <put-attribute name="body" value="/WEB-INF/jsppage/showBlogDetails.jsp"/>
+	</definition>
+	
+	
+	<definition name="/showdemotestpagedetails.info.tiles" extends="baseLayoutbranding">
+	  	<put-attribute name="body" value="/WEB-INF/jsppage/demoExaminationPage.jsp"/>
+	</definition>
+	
+	<definition name="/generatescorecardpage.info.tiles" extends="baseLayoutbranding">
+	  	<put-attribute name="body" value="/WEB-INF/jsppage/generateScoreCardPage.jsp"/>
+	</definition>
+	
+	<definition name="/purchaseexam.info.tiles" extends="baseLayoutbranding">
+	  	<put-attribute name="body" value="/WEB-INF/jsppage/purchaseexam.jsp"/>
+	</definition>
+	
+	<definition name="/paragraphmaster.info.tiles" extends="baseLayoutbranding">
+	  	<put-attribute name="body" value="/WEB-INF/jsppage/paragraphMaster.jsp"/>
+	</definition>
+	
+	<definition name="/xamdeskforumdetails.info.tiles" extends="baseLayoutbranding">
+	  	<put-attribute name="body" value="/WEB-INF/jsppage/xamdeskForumDetails.jsp"/>
+	</definition>
+	
+	<definition name="/exambatchdetails.info.tiles" extends="baseLayoutbranding">
+		<put-attribute name="body" value="/WEB-INF/jsppages/examBatchDetails.jsp" />
+	</definition>
+	
+
+</tiles-definitions>	
+
+

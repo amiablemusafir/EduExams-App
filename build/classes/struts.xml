@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+
+ 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResource" />
+	<constant name="struts.enable.SlashesInActionNames" value="true" />
+	<constant name="struts.url.includeParams" value="none" />
+	<constant name="struts.action.excludePattern" value="/URLFilter,/LoginCaptcha"/>
+	<constant name="struts.multipart.maxSize" value="100000000"></constant>
+
+  <package name="default" extends="struts-default" namespace="/" >
+   
+        <result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<!-- Under Construction Code -->
+		<!-- Start -->
+		<action name="underconstructionpage" method="loginPage" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success">/underconstruction.jsp</result>
+	        <result name="error">/underconstruction.jsp</result>
+	        <result name="login">/underconstruction.jsp</result>
+	    </action> 
+	    
+		<action name="underConstruction" method="userAuthentication" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success" type="chain">xamdeskhome</result>
+	        <result name="error" type="chain">underconstructionpage</result>
+	        <result name="login" type="chain">underconstructionpage</result>
+	    </action> 
+	    <!-- End -->
+	    
+		<!-- Action for all design page -->
+		<!-- Start -->
+		<action name="xamdeskhome" class="com.sms.admin.action.AdminCommonAction" method="loginPage">
+	        <result name="success">/home.jsp</result>
+	        <result name="error">/home.jsp</result>
+	        <result name="login">/home.jsp</result>
+	    </action> 
+	    
+	    <action name="accountLogin" method="loginPage" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success">/login-page.jsp</result>
+	        <result name="error">/home.jsp</result>
+	        <result name="login">/home.jsp</result>
+	    </action> 
+	    
+	    <action name="RegistrationPage" method="loginPage" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success">/registration-page.jsp</result>
+	        <result name="login">/welcome.jsp</result>
+	    </action>  
+	    
+	    <action name="AboutUs" method="designPage" class="com.sms.admin.action.DesignAction">
+	        <result name="success">/aboutus.jsp</result>
+	        <result name="login">/welcome.jsp</result>
+	    </action>
+	    
+	    <action name="termAndCondition" method="designPage" class="com.sms.admin.action.DesignAction">
+	        <result name="success">/termandcondition.jsp</result>
+	        <result name="login">/welcome.jsp</result>
+	    </action>
+	    
+	    <action name="ContactUs" method="designPage" class="com.sms.admin.action.DesignAction">
+	        <result name="success">/contactus.jsp</result>
+	        <result name="login">/welcome.jsp</result>
+	    </action>  
+	    
+	    <action name="SaveContactUsDetails" method="contactUsForm" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success">/contactus.jsp</result>
+	        <result name="login">/welcome.jsp</result>
+	    </action>  
+	    
+	    
+	    
+	    <action name="view_register_examination_details" method="showDesignPage" class="com.sms.admin.action.DesignAction">
+	        <result name="success">/viewRegisterExaminationDetails.jsp</result>
+	        <result name="login">/welcome.jsp</result>
+	    </action> 
+	    
+	    <action name="view_why_you_should_join" method="showDesignPage" class="com.sms.admin.action.DesignAction">
+	        <result name="success">/viewWhyYouShouldJoin.jsp</result>
+	        <result name="login">/welcome.jsp</result>
+	    </action>  
+		<!-- Process End -->		
+		
+		<!-- Xamdesk Forum page details -->
+		<action name="showxamdeskforum" method="designPage" class="com.sms.admin.action.DesignAction">
+	        <result name="success" type="tiles">/xamdeskforumdetails.info.tiles</result>
+	        <result name="login">/welcome.jsp</result>
+	    </action>
+		<!-- Xamdesk Forum End -->
+    
+       
+       
+        <action name="forgotPassword" method="designPage" class="com.sms.admin.action.DesignAction">
+	        <result name="success">/forgot_password.jsp</result>
+	        <result name="login">/welcome.jsp</result>
+	    </action> 	    
+        <action name="forgotPasswordAuthentication" method="changePasswordDetails" class="com.sms.admin.action.AdminCommonAction">
+        	<result name="success">/forgot_password.jsp</result>
+        	<result name="error">/forgot_password.jsp</result>
+       </action>
+       <action name="set-account-password" method="setNewPasswordDetails" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success">/setNewPassword.jsp</result>
+	        <result name="error">/forgot_password.jsp</result>
+	   </action> 
+	    <action name="setNewPasswordAuthentication" method="setNewPasswordAuthentication" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success" type="tiles">/adminlogin.info.tiles</result>
+	        <result name="error">/setNewPassword.jsp</result>
+	        <result name="failed">/forgot_password.jsp</result>
+	   </action> 
+	   
+       
+       
+       
+       <!-- Login Page Authentication -->
+       <action name="showAllExaminationDetails" method="getAllExamDetails" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success" type="tiles">/showallexamination.info.tiles</result>
+	        <result name="login">/welcome.jsp</result>
+	   </action>
+	   
+	   <action name="showNotification" method="showNotification" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success" type="tiles">/shownotification.info.tiles</result>
+	        <result name="login">/welcome.jsp</result>
+	   </action>
+       
+       <action name="authentication" method="userAuthentication" class="com.sms.admin.action.AdminCommonAction">
+	       <result name="success" type="tiles">/adminlogin.info.tiles</result>
+	       <result name="changepassword">/WEB-INF/jsppages/Administration/Transaction/studentChangePassword.jsp</result>
+	       <result name="error" type="chain">accountLogin</result>
+       </action>
+       
+       <action name="changePasswordNSecretQusForm" method="changePasswordNSecretQusForm" class="com.sms.admin.action.AdminCommonAction">
+        <result name="success" type="tiles">/changepassword.info.tiles</result>
+        <result name="error" type="tiles">/changepassword.info.tiles</result>
+       </action>
+       
+       <action name="saveOrUpdateStudentChangePasswordDtl" method="studentChangePassword" class="com.sms.admin.action.AdminCommonAction">
+        <result name="success" type="tiles">/changepassword.info.tiles</result>
+        <result name="error" type="tiles">/changepassword.info.tiles</result>
+       </action>
+      
+      <action name="homepage" method="homepage" class="com.sms.admin.action.AdminCommonAction">
+      <result name="success" type="tiles">/adminlogin.info.tiles</result>
+        <result name="error" type="chain">xamdeskhome</result>
+      </action>
+     
+      <action name="logout" method="logoutAction" class="com.sms.admin.action.AdminCommonAction">
+       <result name="success">/welcomexd.jsp</result>
+      </action>
+     
+      <action name="newsandevents" class="com.oes.action.NewsAndEventsAction" method="showNewsAndEvents">
+		<result name="success" type="tiles">/news.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="news" class="com.oes.action.NewsAndEventsAction" method="saveNewsAndEvents">
+		<result name="success" type="tiles">/news.info.tiles</result>
+		<result name="already_exist" type="tiles">/news.info.tiles</result>
+        <result name="error" type="tiles">/news.info.tiles</result>
+	  </action>
+	  
+	  <action name="editNewsAndEventsDetail" class="com.oes.action.NewsAndEventsAction" method="editNewsAndEvents">
+		<result name="success" type="tiles">/news.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+		
+	  <action name="deleteNewsAndEventsDetail" class="com.oes.action.NewsAndEventsAction" method="deleteNewsAndEventsInfo">
+		<result name="success" type="tiles">/news.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+		
+	  <action name="notice" class="com.oes.action.NoticeAction" method="showNotice">
+		<result name="success" type="tiles">/notice.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="noticeDetails" class="com.oes.action.NoticeAction" method="saveNotice">
+		<result name="success" type="tiles">/notice.info.tiles</result>
+		<result name="already_exist" type="tiles">/notice.info.tiles</result>
+        <result name="error" type="tiles">/notice.info.tiles</result>
+        <result name="login">/welcome.jsp</result>
+	  </action>
+	
+	  <action name="editNoticeDetail" class="com.oes.action.NoticeAction" method="editNotice">
+		<result name="success" type="tiles">/notice.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="deleteNoticeDetail" class="com.oes.action.NoticeAction" method="deleteNoticeInfo">
+		<result name="success" type="tiles">/notice.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="managepassword" class="com.oes.action.DesignAction">
+		<result name="success" type="tiles">/changepassword.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	  
+		
+		
+		
+		
+	  <!-- Student Details Record -->	
+	  <!-- Student Start -->
+	  <action name="showStudentPage" class="com.oes.action.StudentDetailsAction" method="showStudentDetails">
+		<result name="success" type="tiles">/studentrecord.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>		
+	  <action name="showStudentDetailsReport" class="com.oes.action.StudentDetailsAction" method="showStudentDetails">
+		<result name="success" type="tiles">/searchstudentrecord.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>		
+	  <action name="searchStudentsDetailsByCretaria" class="com.oes.action.StudentDetailsAction" method="searchStudentsDetailsByCriteria">
+		<result name="success" type="tiles">/searchstudentrecord.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>				
+	  <action name="saveOrUpdateStudentDetailsDto" class="com.oes.action.StudentDetailsAction" method="saveStudentDetails">
+		<result name="success" type="tiles">/studentrecord.info.tiles</result>
+		<result name="update_success" type="tiles">/searchstudentrecord.info.tiles</result>
+		<result name="already_exist" type="tiles">/studentrecord.info.tiles</result>
+        <result name="error" type="tiles">/studentrecord.info.tiles</result>
+        <result name="login">/welcome.jsp</result>
+	  </action>	  	 
+	  <action name="editstudentDetail" class="com.oes.action.StudentDetailsAction" method="editStudentDetails">
+		<result name="success" type="tiles">/studentrecord.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	  <action name="deletestudentDetail" class="com.oes.action.StudentDetailsAction" method="deleteStudentInfo">
+			<result name="success" type="tiles">/searchstudentrecord.info.tiles</result>
+			<result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  
+	  <action name="showActiveInactiveStudentDetails" class="com.oes.action.StudentDetailsAction" method="showStudentDetailsList">
+		<result name="success" type="tiles">/searchstudent.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>		
+	  <action name="searchStudentsDetailsByCretariaDetails" class="com.oes.action.StudentDetailsAction" method="searchStudentsDetailsByCriteria">
+		<result name="success" type="tiles">/searchstudent.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>	
+	  
+	  <action name="showNewStudentRequestDetails" class="com.oes.action.StudentDetailsAction" method="showNewStudentRequestDetails">
+		<result name="success" type="tiles">/newstudentrequest.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>	
+	  
+	  <action name="changeStudentStatus" class="com.oes.action.StudentDetailsAction" method="changeStudentStatus">
+		<result name="success" type="tiles">/searchstudent.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>	
+	  
+	  <action name="approveStudentStatus" class="com.oes.action.StudentDetailsAction" method="approveStudentStatus">
+		<result name="success" type="tiles">/newstudentrequest.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	  	
+	  <action name="rejectStudentStatus" class="com.oes.action.StudentDetailsAction" method="rejectStudentStatus">
+		<result name="success" type="tiles">/newstudentrequest.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>	
+	  <!-- Student End -->
+		
+		
+		
+	  <!-- Employee Details Record -->	
+	  <!-- Employee Start -->
+	  <action name="showEmployeePage" class="com.oes.action.EmployeeDetailsAction" method="showEmployeeDetails">
+		    <result name="success" type="tiles">/employeerecord.info.tiles</result>
+			<result name="login">/welcome.jsp</result>
+	  </action>
+	  <action name="saveOrUpdateEmployeeDetailsDto" class="com.oes.action.EmployeeDetailsAction" method="saveEmployeeDetails">
+		 	<result name="success" type="tiles">/employeerecord.info.tiles</result>
+		 	<result name="update_success" type="tiles">/searchemployeerecord.info.tiles</result>
+			<result name="already_exist" type="tiles">/employeerecord.info.tiles</result>
+        	<result name="error" type="tiles">/employeerecord.info.tiles</result>
+			<result name="login">/welcome.jsp</result>
+	  </action>
+	  <action name="showEmployeeDetailsReport" class="com.oes.action.EmployeeDetailsAction" method="showEmployeeDetails">
+		<result name="success" type="tiles">/searchemployeerecord.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>	
+	  <action name="searchEmployeeDetailsByCretaria" class="com.oes.action.EmployeeDetailsAction" method="searchEmployeeDetailsByCriteria">
+		<result name="success" type="tiles">/searchemployeerecord.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="editemployeeDetail" class="com.oes.action.EmployeeDetailsAction" method="editEmployeeDetails">
+		<result name="success" type="tiles">/employeerecord.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	  <action name="deleteemployeeDetail" class="com.oes.action.EmployeeDetailsAction" method="deleteEmployeeInfo">
+		<result name="success" type="tiles">/searchemployeerecord.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+		
+  	  <!-- Examination Details -->
+	  <action name="showCreateExamPage" class="com.oes.action.ExamDetailsAction" method="showCreateExamDetails">
+		 <result name="success" type="tiles">/showocreateexampage.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  	  
+	  
+	  <!-- Master -->
+	  <action name="showCourseMasterDetails" class="com.oes.action.CourseDetailsAction" method="showCourseDetails">
+		 <result name="success" type="tiles">/coursemaster.info.tiles</result>
+		 <result name="error" type="tiles">/coursemaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="saveCourseDetailsDto" class="com.oes.action.CourseDetailsAction" method="saveOrUpdateCourseDetailsDto">
+		 <result name="success" type="tiles">/coursemaster.info.tiles</result>
+		 <result name="error" type="tiles">/coursemaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="editCourseDetail" class="com.oes.action.CourseDetailsAction" method="editCourseMasterDetail">
+		 <result name="success" type="tiles">/coursemaster.info.tiles</result>
+		<result name="error" type="tiles">/coursemaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="deleteCourseDetail" class="com.oes.action.CourseDetailsAction" method="deleteCourseMasterDetail">
+		 <result name="success" type="tiles">/coursemaster.info.tiles</result>
+		 <result name="error" type="tiles">/coursemaster.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  
+	  <!-- Content Master -->
+	  <action name="showContentMasterDetails" class="com.oes.action.ContentDetailsAction" method="showContentDetails">
+		 <result name="success" type="tiles">/contentmaster.info.tiles</result>
+		 <result name="error" type="tiles">/contentmaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="saveCourrseDetailsDto" class="com.oes.action.ContentDetailsAction" method="saveOrUpdateContentDetailsDto">
+		 <result name="success" type="tiles">/contentmaster.info.tiles</result>
+		 <result name="error" type="tiles">/contentmaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="editContentDetail" class="com.oes.action.ContentDetailsAction" method="editContentMasterDetail">
+		 <result name="success" type="tiles">/contentmaster.info.tiles</result>
+		<result name="error" type="tiles">/contentmaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="deleteContentDetail" class="com.oes.action.ContentDetailsAction" method="deleteContentMasterDetail">
+		 <result name="success" type="tiles">/contentmaster.info.tiles</result>
+		 <result name="error" type="tiles">/contentmaster.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  
+	  <!-- Institute Master -->
+	  <action name="showInstituteMasterDetails" class="com.oes.action.InstituteDetailsAction" method="showInstituteDetails">
+		 <result name="success" type="tiles">/institutemaster.info.tiles</result>
+		 <result name="error" type="tiles">/institutemaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="saveInstituteDetailsDto" class="com.oes.action.InstituteDetailsAction" method="saveOrUpdateInstituteDetailsDto">
+		 <result name="success" type="tiles">/institutemaster.info.tiles</result>
+		 <result name="error" type="tiles">/institutemaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="editInstituteDetail" class="com.oes.action.InstituteDetailsAction" method="editInstituteMasterDetail">
+		 <result name="success" type="tiles">/institutemaster.info.tiles</result>
+		<result name="error" type="tiles">/institutemaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="deleteInstituteDetail" class="com.oes.action.InstituteDetailsAction" method="deleteInstituteMasterDetail">
+		 <result name="success" type="tiles">/institutemaster.info.tiles</result>
+		 <result name="error" type="tiles">/institutemaster.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  
+	  <action name="showSectionMasterDetails" class="com.oes.action.SectionDetailsAction" method="showSectionDetails">
+		 <result name="success" type="tiles">/sectionmaster.info.tiles</result>
+		 <result name="error" type="tiles">/sectionmaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="saveSectionDetailsDto" class="com.oes.action.SectionDetailsAction" method="saveOrUpdateSectionDetailsDto">
+		 <result name="success" type="tiles">/sectionmaster.info.tiles</result>
+		 <result name="error" type="tiles">/sectionmaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="editSectionDetail" class="com.oes.action.SectionDetailsAction" method="editSectionMasterDetail">
+		 <result name="success" type="tiles">/sectionmaster.info.tiles</result>
+		<result name="error" type="tiles">/sectionmaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="deleteSectionDetail" class="com.oes.action.SectionDetailsAction" method="deleteSectionMasterDetail">
+		  <result name="success" type="tiles">/sectionmaster.info.tiles</result>
+		  <result name="error" type="tiles">/sectionmaster.info.tiles</result>
+		  <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  
+	  
+	  <action name="showCategoryMasterDetails" class="com.oes.action.CategoryDetailsAction" method="showCategoryDetails">
+		  <result name="success" type="tiles">/categorymaster.info.tiles</result>
+		  <result name="error" type="tiles">/categorymaster.info.tiles</result>
+		  <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="saveCategoryDetailsDto" class="com.oes.action.CategoryDetailsAction" method="saveOrUpdateCategoryDetailsDto">
+		  <result name="success" type="tiles">/categorymaster.info.tiles</result>
+		  <result name="error" type="tiles">/categorymaster.info.tiles</result>
+		  <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="editCategoryDetail" class="com.oes.action.CategoryDetailsAction" method="editCategoryMasterDetail">
+		 <result name="success" type="tiles">/categorymaster.info.tiles</result>
+		 <result name="error" type="tiles">/categorymaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="deleteCategoryDetail" class="com.oes.action.CategoryDetailsAction" method="deleteCategoryMasterDetail">
+		  <result name="success" type="tiles">/categorymaster.info.tiles</result>
+		  <result name="error" type="tiles">/categorymaster.info.tiles</result>
+		  <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  
+	  
+	  <action name="showSubCategoryMasterDetails" class="com.oes.action.SubCategoryDetailsAction" method="showSubCategoryDetails">
+		  <result name="success" type="tiles">/subcategorymaster.info.tiles</result>
+		  <result name="error" type="tiles">/subcategorymaster.info.tiles</result>
+		  <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="saveSubCategoryDetailsDto" class="com.oes.action.SubCategoryDetailsAction" method="saveOrUpdateSubCategoryDetailsDto">
+		  <result name="success" type="tiles">/subcategorymaster.info.tiles</result>
+		  <result name="error" type="tiles">/subcategorymaster.info.tiles</result>
+		  <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="editSubCategoryDetail" class="com.oes.action.SubCategoryDetailsAction" method="editSubCategoryMasterDetail">
+		 <result name="success" type="tiles">/subcategorymaster.info.tiles</result>
+		 <result name="error" type="tiles">/subcategorymaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="deleteSubCategoryDetail" class="com.oes.action.SubCategoryDetailsAction" method="deleteSubCategoryMasterDetail">
+		  <result name="success" type="tiles">/subcategorymaster.info.tiles</result>
+		  <result name="error" type="tiles">/subcategorymaster.info.tiles</result>
+		  <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  
+	  
+	  <action name="saveExamSectionDetail" class="com.oes.action.ExamDetailsAction" method="saveExamSectionDetails">
+		 <result name="success" type="tiles">/showocreateexampage.info.tiles</result>
+		 <result name="error" type="tiles">/showocreateexampage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+         
+      <!--    Question Details...... -->
+      <action name="showCreateQuestionPage" class="com.oes.action.ExamDetailsAction" method="showCreateQuestionDetails">
+		 <result name="success" type="tiles">/showcreatequestionpage.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="saveUploadQuestionDetailsDto" class="com.oes.action.ExamDetailsAction" method="saveUploadQuestionDetailsDto">
+		 <result name="success" type="tiles">/showuploadquestionpage.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="saveQuestionDetailsDto" class="com.oes.action.ExamDetailsAction" method="saveQuestionDetailsDto">
+		 <result name="success" type="tiles">/showcreatequestionpage.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="showQuestionDetailsPage" class="com.oes.action.ExamDetailsAction" method="showCreateQuestionDetails">
+		 <result name="success" type="tiles">/editdeletequestionpage.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="searchQuestionByCretaria" class="com.oes.action.ExamDetailsAction" method="searchQuestionByCretaria">
+		 <result name="success" type="tiles">/editdeletequestionpage.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="deleteQuestionDetails" class="com.oes.action.ExamDetailsAction" method="deleteQuestionDetails">
+		 <result name="success" type="tiles">/editdeletequestionpage.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="editQuestionDetails" class="com.oes.action.ExamDetailsAction" method="editQuestionDetails">
+		 <result name="success" type="tiles">/editquestionpage.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="saveEditQuestionDetailsDto" class="com.oes.action.ExamDetailsAction" method="saveEditQuestionDetailsDto">
+		 <result name="success" type="tiles">/editdeletequestionpage.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="showQuestionUpload" class="com.oes.action.ExamDetailsAction" method="showCreateQuestionDetails">
+		 <result name="success" type="tiles">/showuploadquestionpage.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  	  
+	  	  
+	  <action name="getExamDetails" method="ajaxDetails" class="com.oes.action.ExamDetailsAction"></action>
+      <action name="getExamSectionDetails" method="ajaxDetails" class="com.oes.action.ExamDetailsAction"></action>   
+      
+     <action name="showOnlineExam" method="homepage" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success" type="tiles">/showonlineexampage.info.tiles</result>
+     </action>
+     
+	 <action name="showOnlineExamTest" method="showOnlineExamTest" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success">/WEB-INF/design/examPaper.jsp</result>
+     </action> 
+     
+     <action name="showDescription1" method="descriptionPage" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success">/WEB-INF/design/description1.jsp</result>
+	        <result name="error" type="tiles">/showallexamdetailspage.info.tiles</result>
+     </action>
+     
+     <action name="showDescription2" method="descriptionPage2" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success">/WEB-INF/design/description2.jsp</result>
+     </action> 
+     
+      <action name="showDescription3" method="descriptionPage2" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success">/WEB-INF/design/description3.jsp</result>
+     </action>  
+     
+     
+     
+     <action name="saveUserResultDetails" method="saveUserResultDetails" class="com.oes.action.ExamDetailsAction">
+     		<result name="success">/WEB-INF/design/finish.jsp</result>
+     </action>
+     
+     
+     
+     <action name="saveUserDetails" class="com.oes.action.StudentDetailsAction" method="saveUserDetails">
+			<result name="success">/registration-page.jsp</result>
+        	<result name="login">/registration-page.jsp</result>
+        	<result name="error">/registration-page.jsp</result>
+	 </action>
+	 <action name="showUpdateProfilePage" class="com.oes.action.StudentDetailsAction" method="showUpdateStudentDetails">
+			<result name="success" type="tiles">/updatestudentrecord.info.tiles</result>
+			<result name="login">/welcome.jsp</result>
+	 </action>
+	 <action name="updateStudentDetailsDto" class="com.oes.action.StudentDetailsAction" method="updateStudentDetailsDto">
+			<result name="success" type="tiles">/updatestudentrecord.info.tiles</result>
+			<result name="login">/welcome.jsp</result>
+	 </action> 
+	 <action name="showNoticBoard" class="com.oes.action.NoticeAction" method="showNotice">
+		<result name="success" type="tiles">/noticeboard.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 <action name="showNoticDetails" class="com.oes.action.NoticeAction" method="showNoticDetails">
+		<result name="success" type="tiles">/noticeboard.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="socialUserDetails" class="com.oes.action.StudentDetailsAction" method="saveSocialUserDetails">
+		<result name="success">/confirmation-login.jsp</result>
+     	<result name="login" type="tiles">/adminlogin.info.tiles</result>
+	    <result name="error">/home.jsp</result>
+	 </action>
+	 
+	  <action name="socialUserDetailAccount" class="com.oes.action.StudentDetailsAction" method="saveGoogleSocialUserDetails">
+		<result name="success">/confirmation-login.jsp</result>
+     	<result name="login" type="tiles">/adminlogin.info.tiles</result>
+	    <result name="error">/home.jsp</result>
+	 </action>
+	 
+	 <action name="confirmationUserDetails" class="com.oes.action.StudentDetailsAction" method="confirmationUserDetails">
+		<result name="success" type="tiles">/adminlogin.info.tiles</result>
+	    <result name="error">/home.jsp</result>
+	 </action>
+	 
+	 
+	 
+	  
+	 <!-- Manage Exam Details --> 
+	 <action name="showManageExamDetailsPage" class="com.oes.action.ExamDetailsAction" method="showManageExamDetailsPage">
+		<result name="success" type="tiles">/manageexamdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="changeExamStatus" class="com.oes.action.ExamDetailsAction" method="changeExamStatus">
+		<result name="success" type="tiles">/manageexamdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="deleteExamDetail" class="com.oes.action.ExamDetailsAction" method="deleteExamDetail">
+		<result name="success" type="tiles">/manageexamdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="showExamDetails" class="com.oes.action.ExamDetailsAction" method="examDetailPage">
+		<result name="success" type="tiles">/showmanageexamdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	  
+	 <action name="showCheckExamPage" class="com.oes.action.ExamDetailsAction" method="showAllExamPage">
+		<result name="success" type="tiles">/checkexamdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="showAllExamPage" class="com.oes.action.ExamDetailsAction" method="showAllExamPage">
+		<result name="success" type="tiles">/showallexamdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 
+	 <action name="showRequestExamPage" class="com.oes.action.ExamDetailsAction" method="showExamRequestDetailsPage">
+		<result name="success" type="tiles">/showexamrequestdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 
+	 <action name="saveExamRequestDetails" class="com.oes.action.ExamDetailsAction" method="saveExamRequestDetails">
+		<result name="success" type="tiles">/showexamrequestdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 
+	 
+	 <action name="showManageExamRequestDetailsPage" class="com.oes.action.ExamDetailsAction" method="showManageExamRequestDetailsPage">
+		<result name="success" type="tiles">/showmanageexamrequestdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="showManageExamPendingRequest" class="com.oes.action.ExamDetailsAction" method="showManageExamPendingRequest">
+		<result name="success" type="tiles">/showmanageexamrequestdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="showManageExamApprovedRequest" class="com.oes.action.ExamDetailsAction" method="showManageExamApprovedRequest">
+		<result name="success" type="tiles">/showmanageexamrequestdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="showManageExamRejectRequest" class="com.oes.action.ExamDetailsAction" method="showManageExamRejectRequest">
+		<result name="success" type="tiles">/showmanageexamrequestdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="showManageExamRequestDetails" class="com.oes.action.ExamDetailsAction" method="showManageExamRequestDetails">
+		<result name="success" type="tiles">/showmanageexamrequestdetails.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="deleteExamRequestDetail" class="com.oes.action.ExamDetailsAction" method="deleteExamRequestDetail">
+		<result name="success" type="tiles">/showmanageexamrequestdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	  <action name="studentDeleteExamRequestDetail" class="com.oes.action.ExamDetailsAction" method="studentDeleteExamRequestDetail">
+		<result name="success" type="tiles">/showexamrequestdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="manageExamRequestStatus" class="com.oes.action.ExamDetailsAction" method="manageExamRequestStatus">
+		<result name="success" type="tiles">/showmanageexamrequestdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="showResultPage" class="com.oes.action.ExamDetailsAction" method="showStudentResultDetails">
+		<result name="success" type="tiles">/showstudentresultdetails.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="showAdminResultDetailsPage" class="com.oes.action.ExamDetailsAction" method="showAdminResultDetailsPage">
+		<result name="success" type="tiles">/showstudentresultdetails.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="showStudentResultDetailsPage" class="com.oes.action.ExamDetailsAction" method="showStudentResultDetailsPage">
+		<result name="success" type="tiles">/showstudentresultdetailspage.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="homePageResultSearchDetails" class="com.oes.action.ExamDetailsAction" method="homePageResultSearchDetails">
+		<result name="success">/jsp/homePageResult.jsp</result>
+	 </action>
+	 
+	 
+	 
+	 
+	  <!-- Blog Management Details -->
+	  <action name="showStudentMaterials" class="com.oes.action.BlogAndNotesAction" method="showStudentMaterials">
+		 <result name="success">/blog.jsp</result>
+		 <result name="error">/blog.jsp</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="showStudentMaterialsDetails" class="com.oes.action.BlogAndNotesAction" method="showStudentMaterialsDetails">
+		 <result name="success">/blog_details.jsp</result>
+		 <result name="error">/blog.jsp</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="showblogdetails" class="com.oes.action.BlogAndNotesAction" method="showBlogManagementDetails">
+		 <result name="success" type="tiles">/blogdetails.info.tiles</result>
+		 <result name="error" type="tiles">/blogdetails.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="showCreateBlogDetails" class="com.oes.action.BlogAndNotesAction" method="showBlogManagementDetails">
+		 <result name="success" type="tiles">/createblogdetails.info.tiles</result>
+		 <result name="error" type="tiles">/createblogdetails.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>	 
+	  
+	  <action name="saveOrUpdateBlogDetailsDto" class="com.oes.action.BlogAndNotesAction" method="saveOrUpdateBlogManagementDetailsDto">
+		 <result name="success" type="tiles">/createblogdetails.info.tiles</result>
+		 <result name="error" type="tiles">/createblogdetails.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="editBlogDetail" class="com.oes.action.BlogAndNotesAction" method="editBlogManagementDetail">
+		 <result name="success" type="tiles">/createblogdetails.info.tiles</result>
+		<result name="error" type="tiles">/createblogdetails.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="deleteBlogDetail" class="com.oes.action.BlogAndNotesAction" method="deleteBlogManagementDetail">
+		 <result name="success" type="tiles">/createblogdetails.info.tiles</result>
+		 <result name="error" type="tiles">/createblogdetails.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	
+	
+	
+	 <!-- Spot Light Management Details -->
+	  <action name="showSpotLightDetailsPage" class="com.oes.action.SpotLightAction" method="showSpotLightDetailsPage">
+		 <result name="success">/spot_light_details.jsp</result>
+		 <result name="error">/spot_light_details.jsp</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="showCreateSpotLightDetails" class="com.oes.action.SpotLightAction" method="showSpotLightManagementDetails">
+		 <result name="success" type="tiles">/createspotlightdetails.info.tiles</result>
+		 <result name="error" type="tiles">/createspotlightdetails.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>	 
+	  
+	  <action name="saveOrUpdateSpotLightDetailsDto" class="com.oes.action.SpotLightAction" method="saveOrUpdateSpotLightManagementDetailsDto">
+		 <result name="success" type="tiles">/createspotlightdetails.info.tiles</result>
+		 <result name="error" type="tiles">/createspotlightdetails.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="editSpotLightDetail" class="com.oes.action.SpotLightAction" method="editSpotLightManagementDetail">
+		 <result name="success" type="tiles">/createspotlightdetails.info.tiles</result>
+		<result name="error" type="tiles">/createspotlightdetails.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="deleteSpotLightDetail" class="com.oes.action.SpotLightAction" method="deleteSpotLightManagementDetail">
+		 <result name="success" type="tiles">/createspotlightdetails.info.tiles</result>
+		 <result name="error" type="tiles">/createspotlightdetails.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	
+	
+	
+	
+	 
+	 <action name="showRoleMaster" class="com.sms.admin.action.RoleMasterAction" method="showRoleMaster">
+	 	<result name="success" type="tiles">/rolemaster.info.tiles</result>
+		<result name="error" type="tiles">/rolemaster.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="saveRoleMaster" class="com.sms.admin.action.RoleMasterAction" method="saveRoleMaster">
+	 	<result name="success" type="tiles">/rolemaster.info.tiles</result>
+		<result name="error" type="tiles">/rolemaster.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	  <action name="editRoleMasterDetail" class="com.sms.admin.action.RoleMasterAction" method="editRoleMasterDetail">
+	 	<result name="success" type="tiles">/rolemaster.info.tiles</result>
+		<result name="error" type="tiles">/rolemaster.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="deleteRoleMasterDetail" class="com.sms.admin.action.RoleMasterAction" method="deleteRoleMasterInfo">
+	 	<result name="success" type="tiles">/rolemaster.info.tiles</result>
+		<result name="error" type="tiles">/rolemaster.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 
+	 
+	 <action name="showRoleMaster" class="com.sms.admin.action.RoleMasterAction" method="showRoleMaster">
+	 	<result name="success" type="tiles">/rolemaster.info.tiles</result>
+		<result name="error" type="tiles">/rolemaster.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="saveRoleMaster" class="com.sms.admin.action.RoleMasterAction" method="saveRoleMaster">
+	 	<result name="success" type="tiles">/rolemaster.info.tiles</result>
+		<result name="error" type="tiles">/rolemaster.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	  <action name="editRoleMasterDetail" class="com.sms.admin.action.RoleMasterAction" method="editRoleMasterDetail">
+	 	<result name="success" type="tiles">/rolemaster.info.tiles</result>
+		<result name="error" type="tiles">/rolemaster.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="deleteRoleMasterDetail" class="com.sms.admin.action.RoleMasterAction" method="deleteRoleMasterInfo">
+	 	<result name="success" type="tiles">/rolemaster.info.tiles</result>
+		<result name="error" type="tiles">/rolemaster.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 
+	 <!-- Permission Master  -->
+     <action name="showPermissionMasterForm" method="showPermissionMaster" class="com.sms.admin.action.PermissionMasterAction">
+     	<result name="success" type="tiles">/permissionmaster.info.tiles</result>
+        <result name="error" type="chain">loginpage</result>
+     </action>
+       
+     <action name="showParentPermissionCombo" method="showParentPermissionCombo" class="com.sms.admin.action.PermissionMasterAction"></action>
+       
+     <action name="savePermissionMaster" method="savePermissionMasterInfo" class="com.sms.admin.action.PermissionMasterAction">
+     	<result name="success" type="tiles">/permissionmaster.info.tiles</result>
+        <result name="already_exist" type="tiles">/permissionmaster.info.tiles</result>
+        <result name="error" type="tiles">/permissionmaster.info.tiles</result>
+     </action>
+       
+     <action name="editPermissionMasterDetail" method="editPermissionMasterDetail" class="com.sms.admin.action.PermissionMasterAction">
+     	<result name="success" type="tiles">/permissionmaster.info.tiles</result>
+        <result name="error" type="tiles">/permissionmaster.info.tiles</result>
+     </action>
+       
+       
+     <action name="deletePermissionMasterDetails" method="deletePermissionMasterDetails" class="com.sms.admin.action.PermissionMasterAction">
+     	<result name="success" type="tiles">/permissionmaster.info.tiles</result>
+        <result name="error" type="tiles">/permissionmaster.info.tiles</result>
+     </action>
+       
+                    
+     <!-- Role Permission Master  -->            
+        
+     <action name="showRolePermissionMasterForm" method="showRolePermissionMasterForm" class="com.sms.admin.action.RolePermissionMasterAction">
+     	<result name="success" type="tiles">/rolepermissionmaster.info.tiles</result>
+        <result name="error" type="chain">loginpage</result>
+     </action>
+         
+     <action name="getRolePermissionMasterDropDown" method="getRolePermissionBoxes" class="com.sms.admin.action.RolePermissionMasterAction">
+        <result name="success" type="tiles">/rolepermissionmaster.info.tiles</result>
+     </action>
+         
+     <action name="saveRolePermissionMaster" method="saveRolePermissionMasterDetail" class="com.sms.admin.action.RolePermissionMasterAction">
+        <result name="success" type="tiles">/rolepermissionmaster.info.tiles</result>
+        <result name="error" type="chain">loginpage</result>
+        <result name="input" type="tiles">/rolepermissionmaster.info.tiles</result>
+     </action> 
+     
+     
+     
+     
+     
+     <action name="showDemoExaminationDetails" method="designPage" class="com.sms.admin.action.DesignAction">
+	        <result name="success" type="tiles">/showdemotestpagedetails.info.tiles</result>
+	        <result name="login">/welcome.jsp</result>
+	 </action>      
+     <action name="showDemoTestDescription" method="descriptionPage" class="com.sms.admin.action.AdminCommonAction">
+	        <result name="success">/WEB-INF/design/description1.jsp</result>
+	        <result name="error" type="tiles">/showdemotestpagedetails.info.tiles</result>
+     </action>
+     
+     
+     
+	 <action name="showGenerateScoreCard" class="com.oes.action.ExamDetailsAction" method="showGenerateScoreCard">
+		 <result name="success" type="tiles">/generatescorecardpage.info.tiles</result>
+		 <result name="error" type="tiles">/generatescorecardpage.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="generateScoreCardDetails" class="com.oes.action.ExamDetailsAction" method="generateScoreCardDetails">
+		 <result name="success" type="tiles">/generatescorecardpage.info.tiles</result>
+		 <result name="error" type="tiles">/generatescorecardpage.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 
+	 
+	 <action name="showResultDetailsReport" class="com.oes.action.ExamDetailsAction" method="showResultDetailsReport">
+		 <result name="success">/WEB-INF/report/resultDetailsReport.jsp</result>
+		 <result name="error">/welcome.jsp</result>
+		 <result name="login">/welcome.jsp</result>
+	 </action>
+	 <action name="searchStudentsDetailsReportByCretariaReport" class="com.oes.action.ExamDetailsAction" method="searchStudentsDetailsReportByCretariaReport">
+		 <result name="success">/WEB-INF/report/resultDetailsReport.jsp</result>
+		 <result name="error">/welcome.jsp</result>
+		 <result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 
+	 
+	 
+	 <action name="showStudentDetailsReportPage" class="com.oes.action.StudentDetailsAction" method="showStudentDetails">
+		 <result name="success">/WEB-INF/report/studentDetailsReport.jsp</result>
+		 <result name="error">/welcome.jsp</result>
+		 <result name="login">/welcome.jsp</result>
+	 </action>
+	 <action name="searchStudentsDetailsByCretariaReport" class="com.oes.action.StudentDetailsAction" method="searchStudentsDetailsByCriteria">
+		 <result name="success">/WEB-INF/report/studentDetailsReport.jsp</result>
+		 <result name="error">/welcome.jsp</result>
+		 <result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 
+	 
+	 
+	 <action name="showEmployeeDetailsReportPage" class="com.oes.action.EmployeeDetailsAction" method="showEmployeeDetails">
+		 <result name="success">/WEB-INF/report/employeeDetailsReport.jsp</result>
+		 <result name="error">/welcome.jsp</result>
+		 <result name="login">/welcome.jsp</result>
+	 </action>
+	 <action name="searchEmployeeDetailsByCretariaReport" class="com.oes.action.EmployeeDetailsAction" method="searchEmployeeDetailsByCriteria">
+		 <result name="success">/WEB-INF/report/employeeDetailsReport.jsp</result>
+		 <result name="error">/welcome.jsp</result>
+		 <result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="purchaseExaminationDetails" class="com.oes.action.ExamDetailsAction" method="purchaseExaminationDetails">
+	 	 <result name="success" type="tiles">/purchaseexam.info.tiles</result>
+		 <result name="error" type="tiles">/purchaseexam.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 <action name="purchaseExaminationDetailsCnf" class="com.oes.action.ExamDetailsAction" method="purchaseExaminationDetailsCnf">
+	 	 <result name="success" type="tiles">/showallexamdetailspage.info.tiles</result>
+		 <result name="error" type="tiles">/purchaseexam.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 
+	  <!-- Master -->
+	  <action name="showParagraphMasterDetails" class="com.oes.action.ParagraphDetailsAction" method="showParagraphDetails">
+		 <result name="success" type="tiles">/paragraphmaster.info.tiles</result>
+		 <result name="error" type="tiles">/paragraphmaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="saveParagraphDetailsDto" class="com.oes.action.ParagraphDetailsAction" method="saveOrUpdateParagraphDetailsDto">
+		 <result name="success" type="tiles">/paragraphmaster.info.tiles</result>
+		 <result name="error" type="tiles">/paragraphmaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="editParagraphDetail" class="com.oes.action.ParagraphDetailsAction" method="editParagraphMasterDetail">
+		 <result name="success" type="tiles">/paragraphmaster.info.tiles</result>
+		 <result name="error" type="tiles">/paragraphmaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="deleteParagraphDetail" class="com.oes.action.ParagraphDetailsAction" method="deleteParagraphMasterDetail">
+		 <result name="success" type="tiles">/paragraphmaster.info.tiles</result>
+		 <result name="error" type="tiles">/paragraphmaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	 
+	 <action name="getParagraphDetailsList" method="showComboParagraphDetails" class="com.oes.action.ParagraphDetailsAction"></action>
+     
+	 <action name="showCaptcha" method="showCaptcha" class="com.oes.action.DesignAction">
+	  		<result name="success">/contactus.jsp</result>
+	        <result name="login">/welcome.jsp</result>
+	 </action>
+	 
+	 
+	  <!-- Master -->
+	  <action name="showBatchMaster" class="com.oes.action.BatchMasterAction" method="showBatchMaster">
+		 <result name="success" type="tiles">/batchmaster.info.tiles</result>
+		 <result name="error" type="tiles">/batchmaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="saveBatchMasterDto" class="com.oes.action.BatchMasterAction" method="saveOrUpdateBatchMasterDto">
+		 <result name="success" type="tiles">/batchmaster.info.tiles</result>
+		 <result name="error" type="tiles">/batchmaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="editBatchMaster" class="com.oes.action.BatchMasterAction" method="editBatchMasterDetail">
+		 <result name="success" type="tiles">/batchmaster.info.tiles</result>
+		<result name="error" type="tiles">/batchmaster.info.tiles</result>
+		 <result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  <action name="deleteBatchMaster" class="com.oes.action.BatchMasterAction" method="deleteBatchMasterDetail">
+		 <result name="success" type="tiles">/batchmaster.info.tiles</result>
+		 <result name="error" type="tiles">/batchmaster.info.tiles</result>
+		<result name="login">/welcome.jsp</result>
+	  </action>
+	  
+	  
+	  <!-- Batch Details Dto -->
+	  <action name="showExamBatchDetails" method="showExamBatchDetailsPage" class="com.oes.action.ExamDetailsAction">
+     	<result name="success" type="tiles">/exambatchdetails.info.tiles</result>
+        <result name="error" type="chain">loginpage</result>
+      </action>
+      
+      <action name="getExamBatchMappingDropDown" method="getExamBatchBoxes" class="com.oes.action.ExamDetailsAction">
+      	<result name="success" type="tiles">/exambatchdetails.info.tiles</result>
+      </action>
+      
+      <action name="saveExaminationBatchMappingDto" method="saveExamBatchMasterDetail" class="com.oes.action.ExamDetailsAction">
+      	<result name="success" type="tiles">/exambatchdetails.info.tiles</result>
+      </action>
+      
+</package>
+</struts>

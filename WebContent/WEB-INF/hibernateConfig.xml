@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop 
+			http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx 
+			http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<!-- ========================= GENERAL DEFINITIONS ========================= -->
+	<!-- Configurer that replaces ${...} placeholders with values from properties 
+		files -->
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="/WEB-INF/databaseConfig.properties"></property>
+	</bean>
+	<bean id="sqlHibernateCompatibleDao" class="com.sms.admin.daoImpl.SqlHibernateCompatibleDaoImpl">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${db.driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${db.url}</value>
+		</property>
+		<property name="username">
+			<value>${db.username}</value>
+		</property>
+		<property name="password">
+			<value>${db.password}</value>
+		</property>
+		
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+
+		<property name="annotatedClasses">
+			<list>
+				<value>com.sms.admin.dto.AdminDetailDto</value>
+				<value>com.sms.admin.dto.PermissionMasterDto</value>
+				<value>com.sms.admin.dto.RoleMasterDto</value>
+				<value>com.sms.admin.dto.RolePermissionMasterDto</value>
+				<value>com.sms.admin.dto.UserRoleMasterDto</value>
+				
+				
+				<value>com.oes.dto.NewsAndEventsDto</value>
+				<value>com.oes.dto.NoticeDto</value>
+				<value>com.oes.dto.StudentDetailsDto</value>
+				<value>com.oes.dto.EmployeeDetailsDto</value>
+				<value>com.oes.dto.CourseDetailsDto</value>
+				<value>com.oes.dto.SectionDetailsDto</value>
+				<value>com.oes.dto.ExamDetailsDto</value>
+				<value>com.oes.dto.ExamSectionDetailsDto</value>
+				<value>com.oes.dto.QuestionDetailsDto</value>
+				<value>com.oes.dto.ExamQuestionDetailsDto</value>
+				<value>com.oes.dto.StudentExamDetailsDto</value>
+				<value>com.oes.dto.ExamRequestDetailsDto</value>
+				<value>com.oes.dto.ResultDescriptionDto</value>
+				<value>com.oes.dto.ResultDetailsDto</value>
+				<value>com.oes.dto.BlogDetailsDto</value>
+				<value>com.oes.dto.SpotLightDetailsDto</value>
+				<value>com.oes.dto.ScoreGenerationDto</value>
+				<value>com.oes.dto.StudentMappedExamDetailsDto</value>
+				<value>com.oes.dto.ExamImageMasterDto</value>
+				<value>com.oes.dto.CategoryDetailsDto</value>
+				<value>com.oes.dto.SubCategoryDetailsDto</value>
+				<value>com.oes.dto.ParagraphDetailsDto</value>
+				<value>com.oes.dto.DashBoardDto</value>
+				<value>com.oes.dto.NotificationDetailsDto</value>
+				<value>com.oes.dto.ContentDetailsDto</value>
+				<value>com.oes.dto.ChangePasswordDto</value>
+				<value>com.oes.dto.MappedExamDetailsDto</value>	
+				<value>com.oes.dto.BatchMasterDto</value>	
+				<value>com.oes.dto.InstituteDetailsDto</value>	
+				<value>com.oes.dto.ExaminationBatchMappingDto</value>								
+			</list>
+		</property>
+		
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.connection.autocommit">false</prop>
+				<prop key="hibernate.connection.release_mode">auto</prop>
+				<prop key="current_session_context_class">thread</prop>
+				<prop key="hibernate.connection.useUnicode">true</prop>
+				<prop key="hibernate.connection.characterEncoding">UTF-8</prop>
+        		<prop key="hibernate.connection.charSet">UTF-8</prop>
+				<!-- Drop and re-create the database schema on startup -->
+      		    <prop key="hibernate.hbm2ddl.auto">update</prop>
+      		    
+      		 </props>
+		</property>
+		
+	</bean>
+
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<tx:annotation-driven />
+
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<constructor-arg>
+			<ref bean="sessionFactory" />
+		</constructor-arg>
+	</bean>
+
+</beans>

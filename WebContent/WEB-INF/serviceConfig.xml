@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean id="serviceLocator" class="com.sms.util.ServiceLocator" factory-method="getInstance"/>
+	
+	
+	<bean id="adminManagementServices" class="com.sms.admin.serviceImpl.AdminServiceImpl">
+		<property name="adminManagementDao" ref="adminManagementDao"></property>
+	</bean>
+	
+	<bean id="rolePermissionServices" class="com.sms.admin.serviceImpl.RolePermissionServiceImpl">
+	 <property name="rolePermissionDao" ref="rolePermissionDao"></property>
+	 <property name="sqlHibernateCompatibleDao" ref="sqlHibernateCompatibleDao"></property>
+	</bean>
+	 <bean id="roleMasterServices" class="com.sms.admin.serviceImpl.RoleMasterServicesImpl">
+		<property name="roleMasterDao" ref="roleMasterDao"></property>
+	</bean>
+	
+	<bean id="permissionMasterServices" class="com.sms.admin.serviceImpl.PermissionMasterServicesImpl">
+		<property name="permissionMasterDao" ref="permissionMasterDao"></property>
+	</bean>
+	
+	<bean id="newsAndEventsServices" class="com.oes.service.impl.NewsAndEventsServicesImpl">
+		<property name="newsAndEventsDao" ref="newsAndEventsDao"></property>
+	</bean>
+	<bean id="noticeServices" class="com.oes.service.impl.NoticeServicesImpl">
+		<property name="noticeDao" ref="noticeDao"></property>
+	</bean>
+	<bean id="studentDetailsServices" class="com.oes.service.impl.StudentDetailsServicesImpl">
+		<property name="studentDetailsDao" ref="studentDetailsDao"></property>
+	</bean>
+	<bean id="employeeDetailsServices" class="com.oes.service.impl.EmployeeDetailsServicesImpl">
+		<property name="employeeDetailsDao" ref="employeeDetailsDao"></property>
+	</bean>
+	<bean id="examinationDetailsServices" class="com.oes.service.impl.ExaminationDetailsServicesImpl">
+		<property name="examinationDetailsDao" ref="examinationDetailsDao"></property>
+		<property name="sqlHibernateCompatibleDao" ref="sqlHibernateCompatibleDao"></property>
+	</bean>
+	
+	<bean id="masterDetailsServices" class="com.oes.service.impl.MasterDetailsServicesImpl">
+		<property name="masterDetailsDao" ref="masterDetailsDao"></property>
+	</bean>
+	
+	<bean id="blogDetailsServices" class="com.oes.service.impl.BlogDetailsServicesImpl">
+		<property name="blogDetailsDao" ref="blogDetailsDao"></property>
+	</bean>
+	
+</beans>
+ 
+ 
+

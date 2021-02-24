@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	 
+	<bean id="adminManagementDao" class="com.sms.admin.daoImpl.AdminDaoImpl">
+	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="rolePermissionDao" class="com.sms.admin.daoImpl.RolePermissionDaoImpl">
+	 <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="roleMasterDao" class="com.sms.admin.daoImpl.RoleMasterDaoImpl">
+	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	 
+	<bean id="permissionMasterDao" class="com.sms.admin.daoImpl.PermissionMasterDaoImpl">
+	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="newsAndEventsDao" class="com.oes.dao.impl.NewAndEventsDaoImpl">
+	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="noticeDao" class="com.oes.dao.impl.NoticeDaoImpl">
+	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="studentDetailsDao" class="com.oes.dao.impl.StudentDetailsDaoImpl">
+	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="employeeDetailsDao" class="com.oes.dao.impl.EmployeeDetailsDaoImpl">
+	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="examinationDetailsDao" class="com.oes.dao.impl.ExaminationDetailsDaoImpl">
+	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="masterDetailsDao" class="com.oes.dao.impl.MasterDetailsDaoImpl">
+	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<bean id="blogDetailsDao" class="com.oes.dao.impl.BlogDetailsDaoImpl">
+	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+</beans>
