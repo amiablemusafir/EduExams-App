@@ -32,7 +32,7 @@ To set up the Online Examination System locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/amiablemusafir/online-examination-system.git
+   git clone https://github.com/amiablemusafir/EduExams-App.git
 
 2. Install JDK/JRE 8 or above version.
 3. Install Apache Tomcat.
