@@ -7,7 +7,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
+- [Contact](#contact)
 
 ## Introduction
 The EduExams-App(Online Examination System) is a web-based application designed to facilitate the creation, management, and taking of online exams. It provides a user-friendly interface for both administrators and students, ensuring a smooth examination process.
